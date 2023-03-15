@@ -1,10 +1,10 @@
-# ScoutingApp2023
+# 2023 Scouting App2023
 
 This is the scouting app for 2023 to track how other teams perform.
 
 ## How to Download
 
-Download the code by clicking the green `Code` button and click `Download zip` from the dropdown menu.
+Download the code by clicking the green `Code` button and click `Download ZIP` from the dropdown menu.
 
 ![Alt text](assets/Download_zip.png?raw=true "Zip download")
 
