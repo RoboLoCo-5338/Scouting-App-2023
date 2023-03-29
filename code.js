@@ -160,11 +160,11 @@ onEvent("TRBack", "click", function () {
 });
 onEvent("submit", "click", function () {
   var comments = getText("Comments");
-  for(var i = 0; i < comments.length; i++){
-		 if (comments[i] == ",") {
-			comments = comments.substring(0, i) + ";" + comments.substring(i + 1, comments.length);
-		}
-	}
+  for (var i = 0; i < comments.length; i++) {
+    if (comments[i] == ",") {
+      comments = comments.substring(0, i) + ";" + comments.substring(i + 1, comments.length);
+    }
+  }
   var autoCharging = 0;
   var teleopCharging = 0;
   if (getChecked("checkboxDefense") == true) {
