@@ -34,7 +34,7 @@ var data = new Array(length);
 for (var i = 0; i < height; i++) {
   data[i] = new Array(length);
 }
-var list = ["teamNumber", "scouterName", "matchNumber", "autoMobility", "autoDock", "autoEngage", "autoCone", "autoCube", "teleopPark", "teleopDock", "teleopEngage", "teleopCone", "teleopCube", "autoHighCone", "autoHighCube", "autoMidCone", "autoMidCube", "autoLowCone", "autoLowCube", "teleopHighCone", "teleopHighCube", "teleopMidCone", "teleopMidCube", "teleopLowCone", "teleopLowCube", "Auto Points", "Teleop Points", "Auto Charging", "Teleop Charging", "Points without Endgame", "points", "Team Number 2", "Defense", "Did not move", "comments"];
+var list = ["teamNumber", "scouterName", "matchNumber", "autoMobility", "autoDock", "autoEngage", "autoCone", "autoCube", "teleopPark", "teleopDock", "teleopEngage", "teleopCone", "teleopCube", "autoHighCone", "autoHighCube", "autoMidCone", "autoMidCube", "autoLowCone", "autoLowCube", "teleopHighCone", "teleopHighCube", "teleopMidCone", "teleopMidCube", "teleopLowCone", "teleopLowCube", "Auto Points", "Teleop Points", "Auto Charging", "Teleop Charging", "Total Cones", "Total Cube", "Total Game Pieces", "Points without Endgame", "points", "Team Number 2", "Defense", "Did not move", "comments"];
 for (var i = 0; i < list.length; i++) {
   data[0][i] = list[i];
 }
@@ -205,6 +205,9 @@ onEvent("submit", "click", function () {
   teleopPoints = teleopCharging + teleopPoints;
   points = autoPoints + teleopPoints;
   var pointsWOEndgame = points - teleopCharging;
+  var totalGamePieces = autoCone + autoCube + teleopCone + teleopCube;
+  var totalCone = autoCone + teleopCone;
+  var totalCube = autoCube + teleopCube;
   sessionData[0] = teamNumber;
   sessionData[1] = scouterName;
   sessionData[2] = matchNumber;
@@ -234,12 +237,15 @@ onEvent("submit", "click", function () {
   sessionData[26] = teleopPoints;
   sessionData[27] = autoCharging;
   sessionData[28] = teleopCharging;
-  sessionData[29] = pointsWOEndgame;
-  sessionData[30] = points;
-  sessionData[31] = teamNumber;
-  sessionData[32] = defense;
-  sessionData[33] = notMove
-  sessionData[34] = comments;
+  sessionData[29] = totalCone;
+  sessionData[30] = totalCube;
+  sessionData[31] = totalGamePieces;
+  sessionData[32] = pointsWOEndgame;
+  sessionData[33] = points;
+  sessionData[34] = teamNumber;
+  sessionData[35] = defense;
+  sessionData[36] = notMove
+  sessionData[37] = comments;
   for (var i = 0; i < sessionData.length; i++) {
     data[counter][i] = sessionData[i];
   }
